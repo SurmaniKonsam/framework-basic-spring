@@ -72,3 +72,30 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 ```
 ## How project structure really looks like
 ![Alt text](src/main/resources/images/Screenshot 2026-05-13 at 2.04.45 PM.png)
+
+
+## spring.xml
+- One where our beans are extracted from, it needs to be pasted manually from available docs site such as
+  - Spring official documentation --> Most used
+  - IDE auto-generation 
+  - IDE autocomplete 
+  - copying standard Spring XML template --> Most used
+  - old project templates --> Most used
+
+### The configuration
+```
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.jarvis"/>
+
+</beans>
+```
