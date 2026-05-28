@@ -99,3 +99,17 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 </beans>
 ```
+
+
+## Application.properties config for mysql connection.
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/spring_crud
+
+spring.datasource.username=root
+
+spring.datasource.password=YOUR_PASSWORD
+
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.show-sql=true
+```
