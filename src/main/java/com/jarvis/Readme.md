@@ -1,47 +1,8 @@
-# Spring Framework Mastery
-
-Learning Spring Framework from first principles.
-
-## Topics To Be Covered
-- Spring Core
-- IoC Container
-- Dependency Injection
-- Bean Lifecycle
-- Spring Architecture
-
-## Current Progress
-- Basic IoC Container setup
-- Bean creation using @Bean
-- ApplicationContext usage
-- How to push your code from local to remote, without any cloning from the remote repository.
-
-## Spring Mastery Roadmap
-spring-mastery 
-- spring-core 
-- spring-boot 
-- spring-mvc 
-- spring-data-jpa 
-- spring-security 
-- microservices 
-- advanced-projects
+# Spring Framework
 
 
-## How to build spring-framework project structure
-- Build plain java project using maven in intellij, not maven archetype, we will discuss that later.
-- Project structure will be pre-built for you
-  - src
-    - main
-      - java
-        - com.jarvis, your artifact id, which you have defined when building the project
-          - get your folder structure defined
-            - config
-              - Where your @Configuration goes
-            - service
-              - main -> where your spring boot starter code goes
-  - pom.xml
-    - Where you will define your artifactId, groupId of the project and other required dependencies, 
-      - spring-context -> most important dependency which manages your Inversion of controller container.
-```
+#### pom.xml configuration
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -70,46 +31,4 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 </project>
 ```
-## How project structure really looks like
-![Alt text](src/main/resources/images/Screenshot 2026-05-13 at 2.04.45 PM.png)
 
-
-## spring.xml
-- One where our beans are extracted from, it needs to be pasted manually from available docs site such as
-  - Spring official documentation --> Most used
-  - IDE auto-generation 
-  - IDE autocomplete 
-  - copying standard Spring XML template --> Most used
-  - old project templates --> Most used
-
-### The configuration
-```
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-
-       xsi:schemaLocation="
-       http://www.springframework.org/schema/beans
-       https://www.springframework.org/schema/beans/spring-beans.xsd
-
-       http://www.springframework.org/schema/context
-       https://www.springframework.org/schema/context/spring-context.xsd">
-
-    <context:component-scan base-package="com.jarvis"/>
-
-</beans>
-```
-
-
-## Application.properties config for mysql connection.
-```
-spring.datasource.url=jdbc:mysql://localhost:3306/spring_crud
-
-spring.datasource.username=root
-
-spring.datasource.password=YOUR_PASSWORD
-
-spring.jpa.hibernate.ddl-auto=update
-
-spring.jpa.show-sql=true
-```
