@@ -317,31 +317,54 @@ Tomcat now will run on port 8080
 ```textmate
 SpringApplication.run(Main.class, args)
           │
-Identifies the root package (@SpringBootApplication) -> Root package is defined via package containing @SpringBootApplication
+Identifies the Root Package
+(package containing @SpringBootApplication)
           │
-Creates ApplicationContext / Creates with the help of Spring-context dependency (IOC Container)
+Creates ApplicationContext
+(with the help of spring-context) (IOC Container)
           │
 Reads application.properties / application.yml
+(to load application configuration such as server.port,
+database credentials, logging, profiles, etc.)
           │
 Performs Component Scan
+(starting from the Root Package and recursively scanning
+all its sub-packages)
           │
-Finds @Controller, @Service, @Repository, @Component
+Finds @Controller, @Service,
+@Repository, @Component
           │
-Creates & Registers Beans in the IOC Container
+Creates & Registers Beans
+in the IOC Container
           │
 Performs Dependency Injection
           │
+Calls @PostConstruct (if present)
+          │
 Starts Embedded Tomcat
+(using configuration loaded from application.properties,
+e.g., server.port=8080)
           │
 Waits for HTTP Requests
           │
 Browser Request
           │
+Embedded Tomcat
+          │
 DispatcherServlet
           │
-Finds Matching Controller
+HandlerMapping
+(finds the matching Controller method)
+          │
+Controller
           │
 Business Logic
+(Service → Repository → Database)
           │
-Returns Response
+Returns ResponseEntity / Object
+          │
+Jackson (HttpMessageConverter)
+(converts Java Object ↔ JSON)
+          │
+HTTP Response
 ```
