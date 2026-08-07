@@ -319,7 +319,7 @@ SpringApplication.run(Main.class, args)
           │
 Identifies the root package (@SpringBootApplication) -> Root package is defined via package containing @SpringBootApplication
           │
-Creates ApplicationContext (IOC Container)
+Creates ApplicationContext / Creates with the help of Spring-context dependency (IOC Container)
           │
 Reads application.properties / application.yml
           │
